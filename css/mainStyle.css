@@ -1,0 +1,39 @@
+body {
+    background-color: #F4F1EA !important;
+    color: #382110 !important;
+}
+
+
+
+.main-block {
+    border-radius: 1.25rem !important;
+    position: relative !important;
+}
+
+#authorImage {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 8.5rem !important;
+    top:0;
+
+}
+
+
+
+
+
+
+
+
+button {
+    background-color: #382110 !important;
+    color: #F4F1EA !important;
+    border-radius: .1875rem !important;
+    transition: all 0.3s ease !important;
+}
+
+button:hover {
+    transform: translate(0, -0.125rem);
+    background-color: #512f17 !important;
+}
