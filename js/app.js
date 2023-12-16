@@ -36,47 +36,53 @@ var quotes = [
     image: `<img src="../Images/4.jpg" class="rounded-circle w-100 ">`,
   },
   {
-    quote: "“Live as if you were to die tomorrow. Learn as if you were to live forever.”",
+    quote:
+      "“Live as if you were to die tomorrow. Learn as if you were to live forever.”",
     author: "― Mahatma Gandhi",
     image: `<img src="../Images/4.jpg" class="rounded-circle w-100 ">`,
   },
   {
-    quote: "“I am so clever that sometimes I don't understand a single word of what I am saying.”",
+    quote:
+      "“I am so clever that sometimes I don't understand a single word of what I am saying.”",
     author: "― Oscar Wilde, The Happy Prince and Other Stories",
     image: `<img src="../Images/1.jpg" class="rounded-circle w-100 ">`,
   },
   {
-    quote: "“To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.”",
+    quote:
+      "“To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.”",
     author: "― Ralph Waldo Emerson",
     image: `<img src="../Images/5.jpg" class="rounded-circle w-100 ">`,
   },
   {
-    quote: "“It is better to be hated for what you are than to be loved for what you are not.”",
+    quote:
+      "“It is better to be hated for what you are than to be loved for what you are not.”",
     author: "― Andre Gide, Autumn Leaves",
     image: `<img src="../Images/6.jpg" class="rounded-circle w-100 ">`,
   },
 ];
 
-localStorage.setItem("quotes", JSON.stringify(quotes));
+// localStorage.setItem("quotes", JSON.stringify(quotes));
 
 //^ Functions
 
 function showQuote() {
-  randomIndex = Math.floor(Math.random() * quotes.length);
-
   if (usedIndex.length == quotes.length) {
     alert("You have seen all the quotes , refresh the page to see them again");
+    return;
   }
+  randomIndex = Math.floor(Math.random() * quotes.length);
 
   while (usedIndex.includes(randomIndex)) {
-    randomIndex++;
+    if (usedIndex.length == quotes.length) {
+      return;
+    }
+    randomIndex = (randomIndex + 1) % quotes.length;
   }
   var randomQuote = quotes[randomIndex];
   Quote.innerHTML = randomQuote.quote;
   Author.innerHTML = randomQuote.author;
   authorImage.innerHTML = randomQuote.image;
   usedIndex.push(randomIndex);
-  
 }
 
 showQuote();

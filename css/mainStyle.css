@@ -3,6 +3,11 @@ body {
     color: #382110 !important;
 }
 
+h2 {
+    font-family: 'Rochester', cursive;
+    letter-spacing: .3rem;
+}
+
 
 
 .main-block {
@@ -15,7 +20,7 @@ body {
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
     width: 8.5rem !important;
-    top:0;
+    top: 0;
 
 }
 
